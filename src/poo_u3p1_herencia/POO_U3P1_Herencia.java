@@ -9,6 +9,7 @@ public class POO_U3P1_Herencia {
         System.out.println(est.consultarDatos());
         System.out.println("RFC del estudiante");
         est.rfc = sc.next();
+        
         System.out.println(est.consultarDatos());
         
     }
