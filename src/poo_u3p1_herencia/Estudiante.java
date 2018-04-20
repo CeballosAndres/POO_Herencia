@@ -19,6 +19,6 @@ public class Estudiante extends Persona {
     }
     
     public String consultarDatos(){
-        return (this.rfc+", "+this.nombre+","+this.noControl+", "+this.promedio);
+        return (this.rfc+", "+this.nombre+", "+this.noControl+", "+this.promedio+", "+this.email);
     }
 }

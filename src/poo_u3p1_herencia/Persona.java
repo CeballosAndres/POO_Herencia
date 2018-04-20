@@ -2,8 +2,9 @@
 package poo_u3p1_herencia;
 
 public class Persona {
-    String rfc;
-    String nombre;
+    protected String rfc;
+    protected String nombre;
+    protected String email;
     
     public void setRfc(String rfc){
         this.rfc = rfc;
@@ -11,11 +12,17 @@ public class Persona {
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
+    public void setEmail(String email){
+        this.email = email;
+    }
     public String getRfc(){
         return this.rfc;
     }
     public String getNombre(){
         return this.nombre;
+    }
+    public String getEmail(){
+        return this.email;
     }
    
 }

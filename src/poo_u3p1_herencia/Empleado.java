@@ -22,7 +22,5 @@ public class Empleado extends Persona{
     }
     
     
-    public String consultarDatos(){
-        return (this.rfc+", "+this.nombre+", "+this.clave+", "+this.sueldo);
-    }
+
 }
