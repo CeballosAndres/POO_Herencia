@@ -22,7 +22,7 @@ public class POO_U3P1_Herencia {
 
         Empleado emp = new Empleado();
         System.out.println("Datos de emplado");
-        System.out.println(emp.consultarDatos());
+
         
     }
     
