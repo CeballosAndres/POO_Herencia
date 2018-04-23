@@ -3,7 +3,7 @@
 package poo_u3p1_herencia;
 
 public class Administrativo extends Empleado {
-    String puesto;
+    protected String puesto;
 
     public void setPuesto(String puesto) {
         this.puesto = puesto;
@@ -15,6 +15,6 @@ public class Administrativo extends Empleado {
     
 
     public String consultarDatos(){
-        return this.clave+", "+this.email+", "+this.nombre+", "+this.rfc+", "+this.puesto;
+        return this.clave+", "+this.getEmail()+", "+this.getNombre()+", "+this.getRfc()+", "+this.puesto;
     }
 }

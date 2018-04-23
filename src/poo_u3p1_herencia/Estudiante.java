@@ -2,8 +2,8 @@
 package poo_u3p1_herencia;
 
 public class Estudiante extends Persona {
-    String noControl;
-    float promedio;
+    private String noControl;
+    private float promedio;
     
     public void setNoControl(String noControl){
         this.noControl = noControl;
@@ -19,6 +19,6 @@ public class Estudiante extends Persona {
     }
     
     public String consultarDatos(){
-        return (this.rfc+", "+this.nombre+", "+this.noControl+", "+this.promedio+", "+this.email);
+        return this.getRfc()+", "+this.getNombre()+", "+this.getNoControl()+", "+this.getPromedio()+", "+this.getEmail();
     }
 }

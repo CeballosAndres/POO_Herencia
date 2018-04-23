@@ -3,7 +3,7 @@ package poo_u3p1_herencia;
 
 
 public class Docente extends Empleado{
-    int horas;
+    private int horas;
 
     public void setHoras(int horas) {
         this.horas = horas;
@@ -15,7 +15,7 @@ public class Docente extends Empleado{
     }
     
     public String consultarDatos(){
-        return this.clave+", "+this.email+", "+this.nombre+", "+this.rfc+", "+this.horas;
+        return this.clave+", "+this.getEmail()+", "+this.getNombre()+", "+this.getRfc()+", "+this.horas;
     }
     
 }

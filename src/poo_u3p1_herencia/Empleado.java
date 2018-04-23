@@ -2,8 +2,8 @@
 package poo_u3p1_herencia;
 
 public class Empleado extends Persona{
-    String clave;
-    float sueldo;
+    protected String clave;
+    protected float sueldo;
 
     public String getClave() {
         return clave;
