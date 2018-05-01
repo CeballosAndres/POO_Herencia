@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class POO_U3P1_Herencia {
-    ArrayList<Persona> listEstudiantes = new ArrayList<>();
+    ArrayList<Persona> personas = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
     
     
     public void labelMenu(String text){
-        System.out.println("------ "+text+" ------\n");
+        System.out.println("\n------ "+text+" ------\n");
     }
     
 
@@ -17,11 +17,13 @@ public class POO_U3P1_Herencia {
     public void menu(){
         int opc;
         do {
-            if (this.listEstudiantes.isEmpty()) {
+            if (this.personas.isEmpty()) {
                 labelMenu("Menu principal");
                 System.out.println("1 - Agregar.");
+                System.out.println("0 - Salir.");
                 System.out.print("Opcion$ ");
                 opc = sc.nextInt();
+                System.out.println("");
 
                 switch(opc){
                     case 1:
@@ -90,7 +92,7 @@ public class POO_U3P1_Herencia {
     
     public void menuConsultar(){
         int opc;
-        Estudiante est;
+        Persona persona;
         String busca;
         do {
             labelMenu("Consultar");
@@ -103,9 +105,9 @@ public class POO_U3P1_Herencia {
                 case 1:
                     System.out.print("Ingresa alumno a buscar: ");
                     busca = sc.next();
-                    est = buscar(busca);
-                    if (est != null) {
-                        menuAcciones(est);
+                    persona = buscar(busca);
+                    if (persona != null) {
+                        menuAcciones(persona);
                     }
                     break;
                 case 2:
@@ -158,6 +160,8 @@ public class POO_U3P1_Herencia {
             System.out.println("3 - RFC: "+persona.getRfc());
             System.out.println("4 - No. Control: "+((Estudiante)persona).getNoControl());
             System.out.println("5 - Promedio: "+((Estudiante)persona).getPromedio());
+            System.out.println("0 - Regresar.");
+            System.out.print("Opción$ ");
             opc = sc.nextInt();
             
             switch(opc){
@@ -201,42 +205,42 @@ public class POO_U3P1_Herencia {
         System.out.print("Email: ");
         String email = sc.next();
         
-        this.listEstudiantes.add(new Estudiante(numeroControl, promedio, rfc, nombre, email));
+        this.personas.add(new Estudiante(numeroControl, promedio, rfc, nombre, email));
         
     }
     
     public void desplegarEstudiantes(){
-        if (this.listEstudiantes.isEmpty()) {
+        if (this.personas.isEmpty()) {
             System.out.println("No existen registros.");
         } else {
             System.out.println("Campo1\tCampo2\tCampo3");
-            for (int i = 0; i < this.listEstudiantes.size(); i++) {
-                System.out.println(this.listEstudiantes.get(i).consultarDatos());
+            for (int i = 0; i < this.personas.size(); i++) {
+                System.out.println(this.personas.get(i).consultarDatos());
             }
             System.out.println("-----------------------------------\n");
         }
         
     }
     
-    public Estudiante buscar(String busca){
-        for (int i = 0; i < this.listEstudiantes.size(); i++) {
-            if (this.listEstudiantes.get(i).getNombre().equals(busca)||
-                    this.listEstudiantes.get(i).getEmail().equals(busca)||
-                    this.listEstudiantes.get(i).getNoControl() == Integer.parseInt(busca)||
-                    this.listEstudiantes.get(i).getRfc().equals(busca)) {
+    public Persona buscar(String busca){
+        
+        for (int i = 0; i < this.personas.size(); i++) {
+            if (this.personas.get(i).getNombre().equals(busca)||
+                    this.personas.get(i).getEmail().equals(busca)||
+                    this.personas.get(i).getRfc().equals(busca)) {
                 System.out.println("** El estudiante coincide con la busqueda: ");
-                this.listEstudiantes.get(i).consultarDatos();
+                System.out.println(this.personas.get(i).consultarDatos());
                 System.out.println("Opciones:");
-                System.out.println("1 - Seguir buscando.");
-                System.out.println("2 - Seleccionar.");
+                System.out.println("1 - Seleccionar.");
+                System.out.println("2 - Seguir buscando.");
                 System.out.println("0 - Denetener busqueda.");
                 int opc = sc.nextInt();
                 
                 switch(opc){
                     case 1:
-                        break;
+                        return this.personas.get(i);
                     case 2:
-                        return this.listEstudiantes.get(i);
+                        break;
                     case 0:
                         return null;
                 }
@@ -249,11 +253,12 @@ public class POO_U3P1_Herencia {
     public void eliminar(Persona persona){
         char opc;
         labelMenu("Datos");
-        persona.consultarDatos();
-        System.out.print("Esta seguro de eliminar [s/n]: ");
+        System.out.println("Nombre: "+persona.getNombre());
+        System.out.println("RFC: "+persona.getRfc());
+        System.out.print("¿Seguro de eliminar [s/n]: ");
         opc = sc.next().toLowerCase().charAt(0);
         if (opc == 's') {
-            this.listEstudiantes.remove(persona);
+            this.personas.remove(persona);
             System.out.println("Eliminado");
         }
     }
