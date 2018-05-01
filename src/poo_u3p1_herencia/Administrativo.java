@@ -3,8 +3,13 @@
 package poo_u3p1_herencia;
 
 public class Administrativo extends Empleado {
-    protected String puesto;
+    private String puesto;
 
+    public Administrativo(String puesto, String clave, float sueldo, String rfc, String nombre, String email) {
+        super(clave, sueldo, rfc, nombre, email);
+        this.puesto = puesto;
+    }
+    
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }

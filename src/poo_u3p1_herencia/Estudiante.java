@@ -2,16 +2,29 @@
 package poo_u3p1_herencia;
 
 public class Estudiante extends Persona {
-    private String noControl;
+    private int noControl;
     private float promedio;
+
+    public Estudiante(int noControl, float promedio, String rfc, String nombre, String email) {
+        super(rfc, nombre, email);
+        this.noControl = noControl;
+        this.promedio = promedio;
+    }
+    public Estudiante() {
+        super();
+        this.noControl = 0;
+        this.promedio = 0.0f;
+    }
     
-    public void setNoControl(String noControl){
+    
+    
+    public void setNoControl(int noControl){
         this.noControl = noControl;
     }
     public void setPromedio(float promedio){
         this.promedio = promedio;
     }
-    public String getNoControl(){
+    public int getNoControl(){
         return this.noControl;
     }
     public float getPromedio(){
@@ -19,6 +32,9 @@ public class Estudiante extends Persona {
     }
     
     public String consultarDatos(){
-        return this.getRfc()+", "+this.getNombre()+", "+this.getNoControl()+", "+this.getPromedio()+", "+this.getEmail();
+        return this.getNoControl()+"\t"+this.getNombre()+"\t"+this.getRfc()+"\t"+this.getEmail()+"\t"+this.getPromedio();
     }
+    
+    
+    
 }

@@ -6,6 +6,19 @@ public class Persona {
     protected String nombre;
     protected String email;
     
+    public Persona(String rfc, String nombre, String email){
+        this.rfc = rfc;
+        this.nombre = nombre;
+        this.email = email;
+    }
+    
+    public Persona(){
+        this.rfc = null;
+        this.nombre = null;
+        this.email = null;
+    }
+    
+    
     public void setRfc(String rfc){
         this.rfc = rfc;
     }
@@ -23,6 +36,10 @@ public class Persona {
     }
     public String getEmail(){
         return this.email;
+    }
+    
+    public String consultarDatos(){
+        return this.getRfc()+this.getNombre()+this.getEmail();
     }
    
 }

@@ -5,6 +5,11 @@ package poo_u3p1_herencia;
 public class Docente extends Empleado{
     private int horas;
 
+    public Docente(int horas, String clave, float sueldo, String rfc, String nombre, String email) {
+        super(clave, sueldo, rfc, nombre, email);
+        this.horas = horas;
+    }
+
     public void setHoras(int horas) {
         this.horas = horas;
     }
