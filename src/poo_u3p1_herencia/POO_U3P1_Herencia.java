@@ -74,7 +74,7 @@ public class POO_U3P1_Herencia {
 
             switch(opc){
                 case 1:
-                    nuevoEstudiante();
+                    registrar(new Estudiante());
                     break;
                 case 2: 
                     break;
@@ -192,21 +192,37 @@ public class POO_U3P1_Herencia {
         } while (opc!=0);
     }
     
-    public void nuevoEstudiante(){
-        System.out.println("-> Ingresa datos del estudiante.");
-        System.out.print("No Control: ");
-        int numeroControl = sc.nextInt();
-        System.out.print("Promedio: ");
-        float promedio = sc.nextFloat();
+    public Persona registrar(Persona persona){
+        System.out.println("Ingrese datos:");
         System.out.print("RFC: ");
         String rfc = sc.next();
+        //validación para evitar repeticiones
+        for (int i = 0; i < this.personas.size(); i++) {
+            if (this.personas.get(i).getRfc().equals(rfc)) {
+                System.out.println("El RFC dado ya está registrado.");
+                System.out.println("Pertenece a "+this.personas.get(i).consultarDatos());
+                return null;
+            }
+        }
+        //datos comunes a la superclase
+        persona.setRfc(rfc);
         System.out.print("Nombre: ");
-        String nombre = sc.next();
+        persona.setNombre(sc.next());
         System.out.print("Email: ");
-        String email = sc.next();
+        persona.setEmail(sc.next());
         
-        this.personas.add(new Estudiante(numeroControl, promedio, rfc, nombre, email));
-        
+        if (persona.getClass() == Estudiante.class) {
+            registrarEstudiante(persona);
+        }
+        return persona;
+    }
+    
+    public void registrarEstudiante(Persona estudiante){
+        System.out.print("Numero de Control:");
+        ((Estudiante)estudiante).setNoControl(sc.nextInt());
+        System.out.print("Promedio: ");
+        ((Estudiante)estudiante).setPromedio(sc.nextFloat());
+        this.personas.add(estudiante);
     }
     
     public void desplegarEstudiantes(){
