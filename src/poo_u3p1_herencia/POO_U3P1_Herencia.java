@@ -95,7 +95,7 @@ public class POO_U3P1_Herencia {
                 case 0:
                     break;
                 default: 
-                    System.out.println("Gracias, adios.");
+                    System.out.println("Opción invalida.");
             }
         } while (opc != 0);
     }
@@ -349,10 +349,11 @@ public class POO_U3P1_Herencia {
         for (int i = 0; i < this.personas.size(); i++) {
             if (this.personas.get(i).getNombre().equals(busca)||
                     this.personas.get(i).getEmail().equals(busca)||
-                    this.personas.get(i).getRfc().equals(busca)) {
-                System.out.println("** El estudiante coincide con la busqueda: ");
+                    this.personas.get(i).getRfc().equals(busca)||
+                    ((Estudiante)this.personas.get(i)).getNoControl() == Integer.parseInt(busca)) {
+                System.out.println("//Coincidencia con la busqueda// ");
                 System.out.println(this.personas.get(i).consultarDatos());
-                System.out.println("Opciones:");
+                label(" Opciones ");
                 System.out.println("1 - Más opciones.");
                 System.out.println("2 - Seguir buscando.");
                 System.out.println("0 - Denetener busqueda.");
