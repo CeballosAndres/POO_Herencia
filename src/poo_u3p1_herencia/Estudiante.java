@@ -31,8 +31,9 @@ public class Estudiante extends Persona {
         return this.promedio;
     }
     
+    @Override
     public String consultarDatos(){
-        return this.getNoControl()+"\t"+this.getNombre()+"\t"+this.getRfc()+"\t"+this.getEmail()+"\t"+this.getPromedio();
+        return this.getNoControl()+"\t"+super.consultarDatos()+"\t"+this.getPromedio();
     }
     
     

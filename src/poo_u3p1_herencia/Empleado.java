@@ -34,6 +34,10 @@ public class Empleado extends Persona{
         this.sueldo = sueldo;
     }
     
+    @Override
+    public String consultarDatos(){
+        return this.getClave()+"\t"+super.consultarDatos()+"\t"+this.getSueldo();
+    }
     
 
 }

@@ -10,6 +10,11 @@ public class Administrativo extends Empleado {
         this.puesto = puesto;
     }
     
+    public Administrativo(){
+        super();
+        this.puesto = null;
+    }
+    
     public void setPuesto(String puesto) {
         this.puesto = puesto;
     }
@@ -19,7 +24,8 @@ public class Administrativo extends Empleado {
     }
     
 
+    @Override
     public String consultarDatos(){
-        return this.clave+", "+this.getEmail()+", "+this.getNombre()+", "+this.getRfc()+", "+this.puesto;
+        return super.consultarDatos()+"\t"+this.getPuesto();
     }
 }

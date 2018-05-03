@@ -39,7 +39,7 @@ public class Persona {
     }
     
     public String consultarDatos(){
-        return this.getRfc()+this.getNombre()+this.getEmail();
+        return this.getRfc()+"\t"+this.getNombre()+"\t"+this.getEmail();
     }
    
 }

@@ -9,18 +9,23 @@ public class Docente extends Empleado{
         super(clave, sueldo, rfc, nombre, email);
         this.horas = horas;
     }
+    
+    public Docente(){
+        super();
+        this.horas = 0;
+    }
 
     public void setHoras(int horas) {
         this.horas = horas;
     }
 
-    
     public int getHoras() {
         return horas;
     }
     
+    @Override
     public String consultarDatos(){
-        return this.clave+", "+this.getEmail()+", "+this.getNombre()+", "+this.getRfc()+", "+this.horas;
+        return super.consultarDatos()+"\t"+this.getHoras();
     }
     
 }
