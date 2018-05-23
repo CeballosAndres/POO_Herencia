@@ -1,7 +1,6 @@
-
 package poo_u3p1_herencia;
 
-public class Persona {
+public abstract class Persona {
     protected String rfc;
     protected String nombre;
     protected String email;
@@ -17,7 +16,6 @@ public class Persona {
         this.nombre = null;
         this.email = null;
     }
-    
     
     public void setRfc(String rfc){
         this.rfc = rfc;

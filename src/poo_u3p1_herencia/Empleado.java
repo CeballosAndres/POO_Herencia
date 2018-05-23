@@ -1,7 +1,6 @@
-
 package poo_u3p1_herencia;
 
-public class Empleado extends Persona{
+public abstract class Empleado extends Persona{
     protected String clave;
     protected float sueldo;
 
@@ -16,7 +15,6 @@ public class Empleado extends Persona{
         this.clave = null;
         this.sueldo = 0.0f;
     }
-
     
     public String getClave() {
         return clave;
@@ -38,6 +36,4 @@ public class Empleado extends Persona{
     public String consultarDatos(){
         return this.getClave()+"\t"+super.consultarDatos()+"\t"+this.getSueldo();
     }
-    
-
 }

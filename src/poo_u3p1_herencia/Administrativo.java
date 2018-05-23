@@ -1,5 +1,3 @@
-
-
 package poo_u3p1_herencia;
 
 public class Administrativo extends Empleado {
@@ -22,7 +20,6 @@ public class Administrativo extends Empleado {
     public String getPuesto() {
         return puesto;
     }
-    
 
     @Override
     public String consultarDatos(){

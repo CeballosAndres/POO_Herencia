@@ -1,6 +1,4 @@
-
 package poo_u3p1_herencia;
-
 
 public class Docente extends Empleado{
     private int horas;
